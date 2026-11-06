@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.8">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗакрытьЗаказ" id="62">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗакрытьЗаказ</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьЗаказРасширеннаяПодсказка" id="63"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Ресторан" id="7">
+			<DataPath>Объект.Ресторан</DataPath>
+			<ContextMenu name="РесторанКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="РесторанРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Официант" id="10">
+			<DataPath>Объект.Официант</DataPath>
+			<ContextMenu name="ОфициантКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ОфициантРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Стол" id="13">
+			<DataPath>Объект.Стол</DataPath>
+			<ContextMenu name="СтолКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="СтолРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="Клиент" id="16">
+			<DataPath>Объект.Клиент</DataPath>
+			<ContextMenu name="КлиентКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="КлиентРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="СкидочнаяКарта" id="19">
+			<DataPath>Объект.СкидочнаяКарта</DataPath>
+			<ContextMenu name="СкидочнаяКартаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="СкидочнаяКартаРасширеннаяПодсказка" id="21"/>
+			<Events>
+				<Event name="OnChange">СкидочнаяКартаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ДатаОткрытия" id="22">
+			<DataPath>Объект.ДатаОткрытия</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="ДатаОткрытияКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ДатаОткрытияРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="ДатаЗакрытия" id="25">
+			<DataPath>Объект.ДатаЗакрытия</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="ДатаЗакрытияКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ДатаЗакрытияРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<CheckBoxField name="Закрыт" id="28">
+			<DataPath>Объект.Закрыт</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ЗакрытКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ЗакрытРасширеннаяПодсказка" id="30"/>
+		</CheckBoxField>
+		<Table name="Блюда" id="31">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Блюда</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="БлюдаКонтекстноеМеню" id="32"/>
+			<AutoCommandBar name="БлюдаКоманднаяПанель" id="33"/>
+			<ExtendedTooltip name="БлюдаРасширеннаяПодсказка" id="34"/>
+			<SearchStringAddition name="БлюдаСтрокаПоиска" id="35">
+				<AdditionSource>
+					<Item>Блюда</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БлюдаСтрокаПоискаКонтекстноеМеню" id="36"/>
+				<ExtendedTooltip name="БлюдаСтрокаПоискаРасширеннаяПодсказка" id="37"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="БлюдаСостояниеПросмотра" id="38">
+				<AdditionSource>
+					<Item>Блюда</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БлюдаСостояниеПросмотраКонтекстноеМеню" id="39"/>
+				<ExtendedTooltip name="БлюдаСостояниеПросмотраРасширеннаяПодсказка" id="40"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="БлюдаУправлениеПоиском" id="41">
+				<AdditionSource>
+					<Item>Блюда</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="БлюдаУправлениеПоискомКонтекстноеМеню" id="42"/>
+				<ExtendedTooltip name="БлюдаУправлениеПоискомРасширеннаяПодсказка" id="43"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="AfterDeleteRow">БлюдаПослеУдаления</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="БлюдаНомерСтроки" id="44">
+					<DataPath>Объект.Блюда.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БлюдаНомерСтрокиКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="БлюдаНомерСтрокиРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+				<InputField name="БлюдаБлюдо" id="47">
+					<DataPath>Объект.Блюда.Блюдо</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БлюдаБлюдоКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="БлюдаБлюдоРасширеннаяПодсказка" id="49"/>
+					<Events>
+						<Event name="OnChange">БлюдаБлюдоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БлюдаКоличество" id="50">
+					<DataPath>Объект.Блюда.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БлюдаКоличествоКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="БлюдаКоличествоРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="OnChange">БлюдаКоличествоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БлюдаЦена" id="53">
+					<DataPath>Объект.Блюда.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БлюдаЦенаКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="БлюдаЦенаРасширеннаяПодсказка" id="55"/>
+					<Events>
+						<Event name="OnChange">БлюдаЦенаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БлюдаСумма" id="56">
+					<DataPath>Объект.Блюда.Сумма</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БлюдаСуммаКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="БлюдаСуммаРасширеннаяПодсказка" id="58"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="СуммаЗаказа" id="59">
+			<DataPath>Объект.СуммаЗаказа</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="СуммаЗаказаКонтекстноеМеню" id="60"/>
+			<ExtendedTooltip name="СуммаЗаказаРасширеннаяПодсказка" id="61"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РегистрацияЗаказа</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗакрытьЗаказ" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть заказ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гости рассчитались: закрыть заказ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗакрытьЗаказ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
